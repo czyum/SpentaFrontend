@@ -1,0 +1,26 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+  }
+  
+  .navbar-item {
+    
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+    color: orange;
+    text-decoration: inherit;
+    text-transform: uppercase;
+    outline: none;
+  
+
+  }
+  
+  
