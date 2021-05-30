@@ -1,7 +1,7 @@
 import {React,useState} from 'react';
 import Sidebar from "../Sidebar/Sidebar";
 import Chat from "../Chat/Chat";
-import "./ChatApp.css";
+import styles from "./ChatApp.module.css";
 import GroupContext from "../Contexts/GroupContext";
 const ChatApp=()=>{
    const [chatGroup,setChatGroup]=useState("");
@@ -9,8 +9,8 @@ const ChatApp=()=>{
    
    return(
 
-   <div className="chat_app">
-   <div className="chat_app__body">
+   <div className={styles["chat_app"]}>
+   <div className={styles["chat_app__body"]}>
       <GroupContext.Provider value={[chatGroup,setChatGroup]}>
         <Sidebar/>
         <Chat/>

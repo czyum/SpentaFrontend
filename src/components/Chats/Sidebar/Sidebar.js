@@ -1,5 +1,5 @@
 import {React,useState,useRef,useEffect,useContext} from 'react';
-import "./Sidebar.css";
+import styles from "./Sidebar.module.css";
 import {Avatar,IconButton} from "@material-ui/core";
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import SearchOutlined from '@material-ui/icons/SearchOutlined';
@@ -29,12 +29,12 @@ const SideBar=()=>{
         getGroups();
     },[])    
     return(
-    <div className="sidebar">
-        <div className="sidebar__header">
+    <div className={styles["sidebar"]}>
+        <div className={styles["sidebar__header"]}>
         <IconButton>
            <ArrowBackIcon/>
            </IconButton>
-          <div className="sidebar__headerRight">
+          <div className={styles["sidebar__headerRight"]}>
             
           
            <IconButton>
@@ -44,14 +44,14 @@ const SideBar=()=>{
            
           </div>
         </div>
-        <div className="sidebar__search">
-            <div className="sidebar_searchContainer">
+        <div className={styles["sidebar__search"]}>
+            <div className={styles["sidebar_searchContainer"]}>
             <SearchOutlined/>
             <input type="text" name="search" id="" placeholder="search something" />
             </div>
             
         </div>
-        <div className="sidebar__chats">
+        <div className={styles["sidebar__chats"]}>
             {
                 groups.map((ele,i)=>(
                     <div key={i} onClick={()=>{changeGroupHandler(ele)}}>

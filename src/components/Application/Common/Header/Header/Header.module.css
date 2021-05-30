@@ -1,0 +1,9 @@
+.appheader{
+    display: flex;
+    direction: row;
+    background-color:#FFFFFF;
+    height:1rem;
+    padding:1.5rem;
+    align-items: center;
+    border-bottom: 1px solid lightgrey;
+}

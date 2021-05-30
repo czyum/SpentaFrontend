@@ -1,6 +1,6 @@
 import {Avatar} from "@material-ui/core";
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
-import './Chat.css';
+import styles from './Chat.module.css';
 import SendIcon from '@material-ui/icons/Send';
 import IconButton from '@material-ui/core/IconButton';
 import {React,useState,useRef,useEffect,useContext} from 'react';
@@ -59,22 +59,22 @@ const Chat=()=> {
         getMessages();
     },[seed,chatGroup]);
     return (
-        <div className="chat">
-            <div className="chat__header">
+        <div className={styles["chat"]}>
+            <div className={styles["chat__header"]}>
                 <Avatar src="https://avatars.dicebear.com/api/human/chethan.svg"/>
-                <div className="chat__headerInfo">
+                <div className={styles["chat__headerInfo"]}>
                     <h3>Group name</h3>
                 </div>
             </div>
-            <div className="chat__body">
+            <div className={styles["chat__body"]}>
             {
                 message.map((data,i)=>{
                     return(
                         
-                    <p key={i}className={`chat__message ${true && 'chat__sender'}`}>
-                    <span className="chat__name">Chethan</span>
+                    <p key={i}className={`${styles.chat__message} ${true && styles['chat__sender']}`}>
+                    <span className={styles["chat__name"]}>Chethan</span>
                         {data.message}
-                    <span className="chat__timestamp">7:28</span>
+                    <span className={styles["chat__timestamp"]}>7:28</span>
                     </p>
                     
                     )
@@ -83,10 +83,10 @@ const Chat=()=> {
                 
                 
             </div>
-            <form className="chat__footer" onSubmit={sendMessage}>
+            <form className={styles["chat__footer"]} onSubmit={sendMessage}>
             <InsertEmoticonIcon/>
-                <div className="chat__search">
-                    <div className="chat__searchContainer">
+                <div className={styles["chat__search"]}>
+                    <div className={styles["chat__searchContainer"]}>
                     <input type="text" placeholder="Say something" ref={inputRef} />
                     </div>
                 </div>

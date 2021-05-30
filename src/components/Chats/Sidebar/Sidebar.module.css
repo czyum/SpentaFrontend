@@ -11,6 +11,7 @@
     justify-content:space-between;
     height:1rem;
     border-bottom: 1px solid lightgrey;
+    align-items:center;
 }
 
 .sidebar__headerRight{
@@ -25,7 +26,7 @@
     align-items:center;
     background-color: #f6f6f6;
     height:1.8rem;
-    padding:1rem;
+    padding:2rem;
 }
 
 .sidebar_searchContainer{

@@ -15,7 +15,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 const useStyles = makeStyles({
     
         root: {
-          maxWidth: 300,
+          minWidth: 300,
           margin:20,
           borderBlockColor:red,
           color:red,

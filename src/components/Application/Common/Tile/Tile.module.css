@@ -1,0 +1,30 @@
+.tile{
+    width: 250px;
+    height:200px;
+    margin:2rem;
+    
+}
+.tile__content{
+    width: 250px;
+    height:200px;
+    padding: 20px;
+    font-size:1.3rem;
+    display: relative;
+}
+
+.MuiCardActionArea-root{
+    height:200px;
+}
+
+.tile__icon{
+    position: absolute;
+    right:0;
+    bottom:0;
+    padding:1.5rem;
+}
+
+
+
+
+
+
