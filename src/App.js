@@ -3,8 +3,7 @@ import {BrowserRouter,Route, Switch,} from "react-router-dom";
 import axios from 'axios';
 import React, {useState} from 'react';
 import ChatApp from "./components/Chats/ChatApp/ChatApp";
-import Header from "./components/common/header/Header";
-import BaseApp from './components/Application/BaseApp/BaseApp';
+import BaseApp from './components/platform/baseApp/BaseApp';
 
 const App=()=>(
     <div className="app">

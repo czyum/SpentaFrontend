@@ -1,4 +1,3 @@
-import {Avatar} from "@material-ui/core";
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import styles from './Chat.module.css';
 import SendIcon from '@material-ui/icons/Send';
@@ -8,12 +7,15 @@ import {Link} from 'react-router-dom';
 import socket from "../../../socket";
 import axios from "axios";
 import GroupContext from "../Contexts/GroupContext";
+import ScrollableFeed from 'react-scrollable-feed';
+
 const Chat=()=> {
     const [message,setMessage]=useState([]);
     const [seed,setSeed]=useState("");
     const [chatGroup,setChatGroup]=useContext(GroupContext);
     const socketRef=useRef();
     const inputRef=useRef();
+    const messageEl=useRef();
     socketRef.current=socket;
     const sendMessage=async(e)=>{
         e.preventDefault();
@@ -33,6 +35,13 @@ const Chat=()=> {
 
     }
     useEffect(()=>{
+        // scrollToBottom();
+        if (messageEl) {
+            messageEl.current.addEventListener('DOMNodeInserted', event => {
+              const { currentTarget: target } = event;
+              target.scroll({ top: target.scrollHeight, behavior: 'auto' });
+            });
+          }
         socketRef.current.on('message',(data)=>{
             setSeed(Math.random());
         });
@@ -41,9 +50,9 @@ const Chat=()=> {
         }
     },[]);
 
-   
     
     useEffect(()=>{
+        // scrollToBottom();
         const getMessages=async()=>{
             try{
                 const messages=await axios.get(`http://localhost:8000/chat/message/conversations?id=${chatGroup}`);
@@ -61,12 +70,12 @@ const Chat=()=> {
     return (
         <div className={styles["chat"]}>
             <div className={styles["chat__header"]}>
-                <Avatar src="https://avatars.dicebear.com/api/human/chethan.svg"/>
                 <div className={styles["chat__headerInfo"]}>
-                    <h3>Group name</h3>
+                    <h3>{chatGroup}</h3>
                 </div>
             </div>
-            <div className={styles["chat__body"]}>
+           
+            <div className={styles["chat__body"]} ref={messageEl}>
             {
                 message.map((data,i)=>{
                     return(
@@ -80,9 +89,10 @@ const Chat=()=> {
                     )
                 })
             }
-                
-                
+            
             </div>
+           
+            
             <form className={styles["chat__footer"]} onSubmit={sendMessage}>
             <InsertEmoticonIcon/>
                 <div className={styles["chat__search"]}>

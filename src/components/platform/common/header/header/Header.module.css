@@ -1,0 +1,26 @@
+.appheader{
+    display: flex;
+    direction: row;
+    background-color:white;
+    height:1rem;
+    padding:1.5rem;
+    align-items: center;
+    /* border-bottom: 1px solid lightgrey; */
+}
+
+.appheader__left{
+    display: flex;
+    align-items: center;
+    flex:0.3;
+    justify-content:space-between;
+}
+
+.appheader__companyname{
+    padding: 20px;
+}
+
+.appheader__right{
+    display: flex;
+    flex:0.7;
+    flex-direction: row-reverse;
+}

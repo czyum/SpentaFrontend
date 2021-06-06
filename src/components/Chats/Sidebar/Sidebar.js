@@ -6,6 +6,7 @@ import SearchOutlined from '@material-ui/icons/SearchOutlined';
 import SidebarChat from "../SidebarChat/SidebarChat";
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import GroupContext from "../Contexts/GroupContext";
+import Header from '../../platform/common/header/header/Header';
 import axios from 'axios';
 const SideBar=()=>{
     
@@ -30,7 +31,10 @@ const SideBar=()=>{
     },[])    
     return(
     <div className={styles["sidebar"]}>
-        <div className={styles["sidebar__header"]}>
+        <div className={styles.sidebar__header}>
+           <Header/>
+        </div>
+        {/* <div className={styles["sidebar__header"]}>
         <IconButton>
            <ArrowBackIcon/>
            </IconButton>
@@ -43,14 +47,14 @@ const SideBar=()=>{
            <Avatar/>
            
           </div>
-        </div>
-        <div className={styles["sidebar__search"]}>
+        </div> */}
+        {/* <div className={styles["sidebar__search"]}>
             <div className={styles["sidebar_searchContainer"]}>
             <SearchOutlined/>
             <input type="text" name="search" id="" placeholder="search something" />
             </div>
             
-        </div>
+        </div> */}
         <div className={styles["sidebar__chats"]}>
             {
                 groups.map((ele,i)=>(

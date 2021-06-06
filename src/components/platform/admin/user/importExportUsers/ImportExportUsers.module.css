@@ -1,0 +1,9 @@
+.toastBody {
+    color: black; /* #10171D */
+    font-size: 0.875rem !important;
+  }
+
+  .toastProgress {
+    background: #4B6B7E !important;
+  }
+  
